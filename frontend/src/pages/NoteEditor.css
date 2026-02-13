@@ -1,0 +1,302 @@
+.note-editor {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.editor-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  color: var(--text-muted);
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.editor-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.btn-back {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  padding: 0.4rem 0;
+  transition: color 0.2s;
+}
+
+.btn-back:hover {
+  color: var(--accent);
+}
+
+.editor-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.editor-actions .btn-icon {
+  padding: 0.4rem;
+  color: var(--text-muted);
+  border-radius: 6px;
+}
+
+.editor-actions .btn-icon:hover {
+  color: var(--text-primary);
+  background: var(--bg-hover);
+}
+
+.editor-actions .btn-icon.active {
+  color: var(--accent);
+}
+
+.btn-save {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: var(--accent);
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-radius: var(--radius-sm);
+  transition: background 0.2s;
+}
+
+.btn-save:hover:not(:disabled) {
+  background: var(--accent-hover);
+}
+
+.btn-save:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.editor-ai-bar {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.ai-generate {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.ai-generate input {
+  flex: 1;
+  padding: 0.5rem 1rem;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-size: 0.95rem;
+}
+
+.ai-generate input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.ai-generate input::placeholder {
+  color: var(--text-muted);
+}
+
+.ai-generate button {
+  padding: 0.5rem 1rem;
+  background: var(--accent);
+  color: white;
+  font-size: 0.9rem;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+}
+
+.ai-generate button:hover:not(:disabled) {
+  background: var(--accent-hover);
+}
+
+.ai-generate button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.ai-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.ai-buttons button {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.75rem;
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.ai-buttons button:hover:not(:disabled) {
+  background: var(--bg-hover);
+  color: var(--accent);
+}
+
+.ai-buttons button.active {
+  background: var(--accent-muted);
+  color: var(--accent);
+}
+
+.ai-buttons button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.editor-main {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.editor-fields {
+  padding: 1.5rem;
+}
+
+.editor-title {
+  width: 100%;
+  padding: 0;
+  margin-bottom: 1rem;
+  background: transparent;
+  border: none;
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.editor-title:focus {
+  outline: none;
+}
+
+.editor-title::placeholder {
+  color: var(--text-muted);
+}
+
+.tags-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.tag-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  border-radius: 6px;
+}
+
+.tag-chip button {
+  padding: 0 0.15rem;
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.tag-chip button:hover {
+  color: var(--danger);
+}
+
+.tag-input {
+  padding: 0.25rem 0.5rem;
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  min-width: 80px;
+}
+
+.tag-input:focus {
+  outline: none;
+}
+
+.editor-content {
+  width: 100%;
+  min-height: 400px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-primary);
+  resize: vertical;
+}
+
+.editor-content:focus {
+  outline: none;
+}
+
+.editor-content::placeholder {
+  color: var(--text-muted);
+}
+
+.editor-preview {
+  min-height: 400px;
+  padding: 0.5rem 0;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-primary);
+}
+
+.editor-preview h1,
+.editor-preview h2,
+.editor-preview h3 {
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+.editor-preview ul,
+.editor-preview ol {
+  margin-left: 1.5em;
+}
+
+.editor-preview code {
+  font-family: var(--font-mono);
+  background: var(--bg-tertiary);
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+.editor-preview pre {
+  background: var(--bg-tertiary);
+  padding: 1rem;
+  border-radius: var(--radius-sm);
+  overflow-x: auto;
+}
+
+.editor-preview pre code {
+  background: none;
+  padding: 0;
+}
